@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exhibitions</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <a href="/" class="back-button">BACK</a>
+
+<header>
+    <h1>Exhibitions</h1>
+</header>
+
+<section class="intro">
+<div class="scroll-strip">
+  <div class="scroll-content">
+    <div class="marquee">
+      <span class="swap">ΣΤΑΤΙΚΗ</span> 
+      <span class="swap">ΤΕΧΝΗ</span> 
+      <span class="swap">ΔΥΝΑΜΙΚΗ</span> 
+      <span class="swap">ΣΤΑΤΙΚΗ</span> 
+      <span class="swap">ΤΕΧΝΗ</span> 
+      <span class="swap">ΔΥΝΑΜΙΚΗ</span> 
+      <span class="swap">ΔΥΝΑΜΙΚΗ</span> 
+      <span class="swap">ΣΤΑΤΙΚΗ</span> 
+      <span class="swap">ΤΕΧΝΗ</span> 
+      <span class="swap">ΔΥΝΑΜΙΚΗ</span> 
+      <span class="swap">ΤΕΧΝΗ</span>
+      <span class="swap">ΤΕΧΝΗ</span> 
+      <span class="swap">ΤΕΧΝΗ</span> 
+      <span class="swap">ΤΕΧΝΗ</span> 
+      <span class="swap">ΔΥΝΑΜΙΚΗ</span>
+      <span class="swap">ΔΥΝΑΜΙΚΗ</span>
+    </div>
+
+    <div class="marquee">
+      <span class="swap">ΣΤΑΤΙΚΗ</span> 
+      <span class="swap">ΤΕΧΝΗ</span>
+      <span class="swap">ΣΤΑΤΙΚΗ</span> 
+      <span class="swap">ΤΕΧΝΗ</span> 
+      <span class="swap">ΔΥΝΑΜΙΚΗ</span> 
+      <span class="swap">ΣΤΑΤΙΚΗ</span> 
+      <span class="swap">ΤΕΧΝΗ</span> 
+      <span class="swap">ΔΥΝΑΜΙΚΗ</span> 
+      <span class="swap">ΤΕΧΝΗ</span>
+      <span class="swap">ΤΕΧΝΗ</span> 
+      <span class="swap">ΤΕΧΝΗ</span> 
+      <span class="swap">ΤΕΧΝΗ</span>
+      <span class="swap">ΤΕΧΝΗ</span>
+      <span class="swap">ΤΕΧΝΗ</span> 
+    </div>
+  </div> 
+
+
+   <!--<p>
+        Πως γίνεται η Στατικη Τέχνη και η Τέχνη Δυναμική;
+    </p>-->
+</section>
+
+
+<!--<nav>
+    <ul class="menu">
+        <li><a href="/" class="menu-item">BACK</a></li>
+    </ul>
+</nav>-->
+
+<section class="exhibitions-list">
+
+    {% for ex in exhibitions %}
+    <div class="exhibition-item">
+        <div class="exhibition-text">
+            <h3>{{ ex.year }} — {{ ex.title }}</h3>
+            <p>{{ ex.place }}</p>
+        </div>
+
+        {% if ex.image %}
+        <img src="{{ url_for('static', filename='exhibitions/' + ex.image) }}" class="exhibition-thumb">
+        {% endif %}
+    </div>
+    {% endfor %}
+
+</section>
+
+
+<!-- ΜΠΑΡΑ ΣΤΟ EXHIBITIONS -->
+<script>
+const choices = ["ΣΤΑΤΙΚΗ", "ΤΕΧΝΗ", "ΔΥΝΑΜΙΚΗ"];
+
+function randomWord() {
+  return choices[Math.floor(Math.random() * choices.length)];
+}
+
+function updateWords() {
+  document.querySelectorAll(".swap").forEach(span => {
+    span.textContent = randomWord();
+  });
+}
+
+setInterval(updateWords, 1500); // αλλάζει κάθε 1.5 δευτερόλεπτο
+</script>
+
+
+
+</body>
+</html>

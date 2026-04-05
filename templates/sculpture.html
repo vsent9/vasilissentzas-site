@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sculpture Works</title>
+
+    <!-- ΣΩΣΤΟ CSS PATH ΓΙΑ FLASK -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- Fancybox CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
+
+</head>
+
+<body>
+
+<header>
+    <h1>Sculpture</h1>
+</header>
+
+<div class="back-button">
+    <a href="/" class="back-min">
+        <span class="icon">←</span> Back
+    </a>
+</div>
+
+<section class="gallery">
+
+    <!-- ΕΜΦΑΝΙΖΕΙ ΟΛΕΣ ΤΙΣ ΕΙΚΟΝΕΣ ΑΠΟ ΤΟ static/images -->
+    {% for img in images %}
+    <div class="item">
+        <a data-fancybox="gallery" href="{{ url_for('static', filename='images/sculpture/' + img) }}">
+          <img src="{{ url_for('static', filename='images/sculpture/' + img) }}">
+        </a>
+
+        <!--<img src="{{ url_for('static', filename='images/sculpture/' + img) }}">-->
+        <p>{{ titles.get(img, "") }}</p>
+        <!--<p>{{ img }}</p>-->
+    </div>
+    {% endfor %}
+
+</section>
+
+    <!-- Fancybox JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+
+</body>
+</html>
+

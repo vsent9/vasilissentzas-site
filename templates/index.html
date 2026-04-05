@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VS</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Συνδέουμε το εξωτερικό CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
+</head>
+
+<body>
+
+    <header>
+        <h1>VS</h1>
+    </header>
+
+    <!-- 🔸 ΕΔΩ ΒΑΖΕΙΣ ΤΟ MENU 🔸 -->
+    <nav>
+        <ul class="menu">
+            <!--<li><a href="/sculpture" class="menu-item">SCULPTURE</a></li>
+            <li><a href="printmaking.html" class="menu-item">PRINTMAKING</a></li>
+            <li><a href="digital.html" class="menu-item">DIGITAL ART</a></li>-->
+            <li><a href="/gallery/sculpture" class="menu-item">SCULPTURE</a></li>
+            <li><a href="/gallery/printmaking" class="menu-item">PRINTMAKING</a></li>
+            <li><a href="/gallery/digital" class="menu-item">DIGITAL ART</a>
+            <li><a href="/gallery/drawings" class="menu-item">DRAWINGS</a></li>
+            
+
+        </ul>
+    </nav>
+    <!-- 🔸 ΤΕΛΟΣ MENU 🔸 -->
+
+    <section class="hero">
+        <img src="{{ url_for('static', filename='hero/1.jpg') }}" alt="Artwork">
+
+
+        <h2>VaS</h2>
+        <!-- <p>Sculpture · Printmaking · Digital Art</p> -->
+    </section>
+
+    <div class="footer-container">
+    <a href="/exhibitions" class="footer-link">EXHIBITIONS</a>
+    <a href="/contact" class="footer-link">CONTACT</a>
+    <a href="/press" class="footer-link">PRESS</a>
+    </div>
+
+
+
+
+
+</body>
+</html>

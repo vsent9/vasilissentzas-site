@@ -1,0 +1,20 @@
+[
+    {
+        "year": "2024",
+        "title": "Material Echoes",
+        "place": "Κρατική Πινακοθήκη",
+        "image": "material_echoes.jpg"
+    },
+    {
+        "year": "2023",
+        "title": "Lines of Tension",
+        "place": "Art Studio 55",
+        "image": "lines_tension.jpg"
+    },
+    {
+        "year": "2022",
+        "title": "Group Exhibition",
+        "place": "Municipal Gallery",
+        "image": "group_show.jpg"
+    }
+]

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ category|capitalize }}</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- Fancybox -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
+</head>
+
+<body>
+
+<header>
+    <h1>{{ category|capitalize }}</h1>
+</header>
+
+<!-- 🔙 ΜΟΝΟ BACK BUTTON -->
+<nav>
+    <ul class="menu">
+        <li><a href="/" class="menu-item">BACK</a></li>
+    </ul>
+</nav>
+
+<section class="gallery">
+
+    {% for item in items %}
+    <div class="item">
+
+        {% if item.type == "image" %}
+        <a data-fancybox="gallery"
+           data-caption="{{ titles.get(item.filename, '') }}"
+           href="{{ url_for('static', filename='images/' + category + '/' + item.filename) }}">
+            <img src="{{ url_for('static', filename='images/' + category + '/' + item.filename) }}">
+        </a>
+        {% endif %}
+
+        {% if item.type == "video" %}
+        <a data-fancybox="gallery"
+           data-caption="{{ titles.get(item.filename, '') }}"
+           href="{{ url_for('static', filename='images/' + category + '/' + item.filename) }}">
+            <video src="{{ url_for('static', filename='images/' + category + '/' + item.filename) }}"
+                   muted style="width:100%; border-radius:4px;"></video>
+        </a>
+        {% endif %}
+
+        <p>{{ titles.get(item.filename, "") }}</p>
+
+    </div>
+    {% endfor %}
+
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+
+</body>
+</html>

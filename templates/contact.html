@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <a href="/" class="back-button">BACK</a>
+
+    <header>
+        <h1>Contact</h1>
+    </header>
+
+    <section class="intro">
+        <p>
+            
+        </p>
+    </section>
+
+    <section class="contact-section">
+
+     <!--<div class="contact-item">
+        <h3>Διεύθυνση</h3>
+        <p class="subtle-link">Οδός Παράδειγμα 12</p>
+    </div>-->
+
+    <!--<div class="contact-item">
+        <h3>Πόλη</h3>
+        <p class="subtle-link">Λάρισα, Ελλάδα</p>
+    </div>-->
+
+    <div class="contact-item">
+        <h3>Τηλέφωνο</h3>
+        <p class="subtle-link">+30 6977 255 753</p>
+    </div>
+
+    <div class="contact-item">
+        <h3>Email</h3>
+        <p><a href="mailto:vas@example.com" class="subtle-link">vas@example.com</a></p>
+    </div>
+
+    <div class="contact-item">
+        <h3>Instagram</h3>
+        <p><a href="https://instagram.com/yourprofile" class="subtle-link" target="_blank">@yourprofile</a></p>
+    </div>
+
+    <div class="contact-item">
+    <h3>Send message</h3>
+
+    <form action="/send_message" method="POST" class="contact-form">
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <textarea name="message" placeholder="Your message" required></textarea>
+        <button type="submit">Send</button>
+    </form>
+</div>
+
+
+</section>
+
+</body>
+</html>
