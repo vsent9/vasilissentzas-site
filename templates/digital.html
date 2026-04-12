@@ -11,7 +11,7 @@
     </a>
 </div>
 
-<section class="gallery">
+<!--<section class="gallery">
 
     <div class="item">
         <video controls>
@@ -20,7 +20,21 @@
         <p>Digital Video 1</p>
     </div>
 
+</section>-->
+<section class="gallery">
+    {% for file, title in titles.items() %}
+        {% if file.endswith('.mp4') %}
+        <div class="item">
+            <video controls>
+                <source src="{{ url_for('static', filename='images/digital/' ~ file) }}" type="video/mp4">
+            </video>
+            <p>{{ title }}</p>
+        </div>
+        {% endif %}
+    {% endfor %}
 </section>
+
+
 
 {% endblock %}
 
