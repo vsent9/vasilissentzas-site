@@ -19,6 +19,9 @@ def gallery(category):
     video_ext = (".mp4", ".mov", ".webm")
 
     files = os.listdir(folder)
+    files = sorted(files)
+
+    
 
     items = []
     for f in files:
