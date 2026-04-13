@@ -131,6 +131,7 @@ header {
 
     .hero h2 {
         font-size: 36px;
+        opacity: 0.5;   /* TO 2 VS */
     }
 
     /* Sculpture page gallery or list */
