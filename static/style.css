@@ -652,14 +652,18 @@ header {
     font-family: "IBM Plex Mono", monospace;
     font-size: 14px;
     line-height: 1.5;
-}
 
-.fancybox-caption {
-    max-height: 200px;
+    /* ΝΕΕΣ ΠΡΟΣΘΗΚΕΣ */
+    text-align: left;          /* όχι κέντρο */
+    width: 100%;               /* πιάνει όλο το πλάτος */
+    max-height: 200px;         /* scroll μόνο όταν χρειάζεται */
     overflow-y: auto;
-    white-space: normal;
-    word-break: break-word;
-    padding-right: 10px;
+    white-space: normal;       /* αναδίπλωση */
+    word-break: break-word;    /* σπάει μεγάλες λέξεις */
+
+    margin-top: 15px;          /* μεγαλύτερη απόσταση από τον τίτλο */
+    opacity: 0.75;             /* πιο “διάφανα” γράμματα */
+    padding-right: 10px;       /* για να μην ακουμπάει η μπάρα στο κείμενο */
 }
 
 
