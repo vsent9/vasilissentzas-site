@@ -670,7 +670,7 @@ header {
 .fancybox-caption-wrap {
     text-align: left !important;
     width: 100% !important;
-    margin-top: 20px !important;
+    margin-top: 40px !important;
     opacity: 0.75 !important;
 }
 
@@ -678,8 +678,8 @@ header {
 .fancybox-caption__body {
     text-align: left !important;
     width: 100% !important;
-    opacity: 0.75 !important;
-    margin-top: 20px !important;
+    opacity: 0.65 !important;
+    margin-top: 40px !important;
 }
 
 
