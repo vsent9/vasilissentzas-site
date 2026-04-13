@@ -98,6 +98,7 @@
     
 <script>
 Fancybox.bind("[data-fancybox='videos']", {
+    type: "video",
   caption: function (fancybox, slide) {
     const title = slide.$trigger.dataset.caption || "";
     const text = slide.$trigger.dataset.description || "";
