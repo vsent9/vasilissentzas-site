@@ -692,3 +692,9 @@ header {
     display: block !important;
 }
 
+/* Μεγαλύτερη απόσταση ανάμεσα στον τίτλο και την πρώτη γραμμή του caption */
+.fancybox-caption {
+    padding-top: 25px !important;   /* ΑΥΤΟ δημιουργεί το κενό που θες */
+}
+
+
