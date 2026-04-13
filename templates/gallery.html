@@ -55,7 +55,9 @@
         </a>
         {% endif %}
 
-        <p>{{ titles.get(item.filename, "") }}</p>
+        <!--<p>{{ titles.get(item.filename, "") }}</p>--> 
+        <p>{{ titles[item.filename].title }}</p>
+
 
     </div>
     {% endfor %}
