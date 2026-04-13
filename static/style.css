@@ -670,7 +670,7 @@ header {
 .fancybox-caption-wrap {
     text-align: left !important;
     width: 100% !important;
-    margin-top: 40px !important;
+    margin-top: 20px !important;
     opacity: 0.75 !important;
 }
 
@@ -679,7 +679,16 @@ header {
     text-align: left !important;
     width: 100% !important;
     opacity: 0.65 !important;
+    margin-top: 20px !important;
+}
+
+/* Μεγαλύτερη απόσταση ανάμεσα στον τίτλο και το caption */
+.fancybox-slide--current .fancybox-caption {
     margin-top: 40px !important;
 }
 
+/* Διορθώνει το bug όπου η πρώτη λέξη μένει μόνη της */
+.fancybox-caption__body {
+    display: block !important;
+}
 
