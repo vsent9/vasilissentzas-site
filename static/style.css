@@ -666,5 +666,20 @@ header {
     padding-right: 10px;       /* για να μην ακουμπάει η μπάρα στο κείμενο */
 }
 
+/* Πιάνει το wrapper που το Fancybox χρησιμοποιεί για το caption */
+.fancybox-caption-wrap {
+    text-align: left !important;
+    width: 100% !important;
+    margin-top: 20px !important;
+    opacity: 0.75 !important;
+}
+
+/* Πιάνει το εσωτερικό σώμα του caption */
+.fancybox-caption__body {
+    text-align: left !important;
+    width: 100% !important;
+    opacity: 0.75 !important;
+    margin-top: 20px !important;
+}
 
 
