@@ -654,6 +654,13 @@ header {
     line-height: 1.5;
 }
 
+.fancybox-caption {
+    max-height: 200px;
+    overflow-y: auto;
+    white-space: normal;
+    word-break: break-word;
+    padding-right: 10px;
+}
 
 
 
