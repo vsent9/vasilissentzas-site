@@ -16,7 +16,8 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
     <!-- Fancybox -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
+    <link rel="stylesheet" 
+     href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
 </head>
 
 <body>
@@ -77,8 +78,7 @@
 
 
       {% if item.type == "video" %}
-      <a data-fancybox="videos"
-       data-type="video"
+      <a data-fancybox="gallery"
        data-caption="{{ titles[item.filename].title }}<br>{{ titles[item.filename].text }}"
        data-description="{{ titles[item.filename].text }}"
        href="{{ url_for('static', filename='images/' + category + '/' + item.filename) }}">
@@ -93,27 +93,24 @@
      {% endfor %}
     
 </section>
-
-<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+    
+<!-- jQuery + Fancybox 3 JS -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+ 
+<!--<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>-->
     
 <script>
-Fancybox.bind("[data-fancybox='videos']", {
-    type: "video",
-  caption: function (fancybox, slide) {
-    const title = slide.$trigger.dataset.caption || "";
-    const text = slide.$trigger.dataset.description || "";
-
-    return `
-      <div class="caption-title">${title}</div>
-      <div class="caption-text">${text}</div>
-    `;
-  },
-on: {
-    reveal: () => {
-      document.querySelectorAll("video").forEach(v => v.pause());
-    }
-  }
-});
+// Optional basic init (Fancybox 3 δουλεύει και χωρίς αυτό)
+  $('[data-fancybox="gallery"]').fancybox({
+    buttons: [
+      "zoom",
+      "slideShow",
+      "fullScreen",
+      "close"
+    ]
+  });
+  
 </script>
 
     
