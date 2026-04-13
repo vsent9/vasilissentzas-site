@@ -34,7 +34,7 @@
 
 <section class="gallery">
 
-    {% for item in items %}
+    <!--{% for item in items %}
     <div class="item">
 
         {% if item.type == "image" %}
@@ -54,14 +54,45 @@
             <video src="{{ url_for('static', filename='images/' + category + '/' + item.filename) }}"
                    muted style="width:100%; border-radius:4px;"></video>
         </a>
-        {% endif %}
+        {% endif %}-->
 
         <!--<p>{{ titles.get(item.filename, "") }}</p>--> 
-        <p>{{ titles[item.filename].title }}</p>
+        <!--<p>{{ titles[item.filename].title }}</p>-->
 
+        <!--</div>
+        {% endfor %}-->
+
+        {% for item in items %}
+        <div class="item">
+
+       {% if item.type == "image" %}
+        <a data-fancybox="gallery"
+       data-caption="{{ titles[item.filename].title }}"
+       href="{{ url_for('static', filename='images/' + category + '/' + item.filename) }}">
+        <img src="{{ url_for('static', filename='images/' + category + '/' + item.filename) }}">
+       </a>
+
+       <p>{{ titles[item.filename].title }}</p>
+       {% endif %}
+
+
+      {% if item.type == "video" %}
+      <a data-fancybox="gallery"
+       data-type="video"
+       data-caption="{{ titles[item.filename].title }}"
+       data-description="{{ titles[item.filename].text }}"
+       href="{{ url_for('static', filename='images/' + category + '/' + item.filename) }}">
+        <video src="{{ url_for('static', filename='images/' + category + '/' + item.filename) }}"
+               muted playsinline style="width:100%; border-radius:4px;"></video>
+    </a>
+
+    <p>{{ titles[item.filename].title }}</p>
+    {% endif %}
 
     </div>
-    {% endfor %}
+     {% endfor %}
+
+    
 
 </section>
 
