@@ -43,7 +43,8 @@
 
         {% if item.type == "video" %}
         <a data-fancybox="gallery"
-           data-caption="{{ titles.get(item.filename, '') }}"
+           data-caption="{{ titles[item.filename].title }}"
+           data-description="{{ titles[item.filename].text }}"
            href="{{ url_for('static', filename='images/' + category + '/' + item.filename) }}">
             <video src="{{ url_for('static', filename='images/' + category + '/' + item.filename) }}"
                    muted style="width:100%; border-radius:4px;"></video>
