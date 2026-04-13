@@ -47,6 +47,7 @@
 
         {% if item.type == "video" %}
         <a data-fancybox="gallery"
+           data-type="video"
            data-caption="{{ titles[item.filename].title }}"
            data-description="{{ titles[item.filename].text }}"
            href="{{ url_for('static', filename='images/' + category + '/' + item.filename) }}">
