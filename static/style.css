@@ -130,8 +130,8 @@ header {
     }
 
     .hero h2 {
-        font-size: 36px;
-        opacity: 0.5;   /* TO 2 VS */
+        font-size: 20px;
+        opacity: 0.3;   /* TO 2 VS στο κινητο */
     }
 
     /* Sculpture page gallery or list */
@@ -698,4 +698,8 @@ header {
     padding-top: 25px !important;   /* ΑΥΤΟ δημιουργεί το κενό που θες */
 }
 
+.hero h2 {
+    font-size: 20px;
+    opacity: 0.5;   /* το 2 VS STO DESCTOP */
+}
 
