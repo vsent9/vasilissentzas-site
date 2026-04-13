@@ -27,7 +27,7 @@ header {
 
 /* Εικόνα hero */
 .hero img {
-    width: 400px;        /* Μικραίνει την εικόνα */
+    width: 300px;        /* Μικραίνει την εικόνα */
     max-width: 70%;      /* Για κινητά */
     height: auto;
     margin-bottom: 10px;
