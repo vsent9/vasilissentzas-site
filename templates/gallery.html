@@ -59,6 +59,22 @@
 </section>
 
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+    
+<script>
+Fancybox.bind("[data-fancybox='gallery']", {
+  caption: function (fancybox, slide) {
+    const title = slide.$trigger.dataset.caption || "";
+    const text = slide.$trigger.dataset.description || "";
+
+    return `
+      <div class="caption-title">${title}</div>
+      <div class="caption-text">${text}</div>
+    `;
+  }
+});
+</script>
+
+    
 
 </body>
 </html>
